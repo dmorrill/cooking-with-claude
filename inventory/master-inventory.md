@@ -18,7 +18,7 @@ Central view of all food storage locations. Click through to individual files fo
 
 - **Total Locations:** 7
 - **Items Expiring This Week:** Check individual files
-- **Shopping List Items:** See [shopping-list.md](../shopping-list.md)
+- **Shopping List Items:** See [shopping-list-template.md](../templates/shopping-list-template.md)
 
 ## Expiration Alerts
 
