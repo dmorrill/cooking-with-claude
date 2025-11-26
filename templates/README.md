@@ -46,6 +46,24 @@ These templates represent workflows I've developed and refined through real cook
 
 ---
 
+### [shopping-list-template.md](shopping-list-template.md)
+
+**The Problem:** Shopping lists scattered across notes apps, paper scraps, and text messages. No consistent format, easy to forget things, hard to organize by store section.
+
+**The Solution:** A structured template organized by store section (produce, protein, dairy, etc.) that Claude can generate from meal plans or recipes.
+
+**Why it works:**
+- Organized by how you walk through the store
+- Links items back to which recipe needs them
+- Running list section for staples you notice running low
+- Easy to check off on your phone
+
+**How I use it:** When I plan meals for the week, I ask Claude to generate a shopping list from those recipes. It consolidates duplicates (if two recipes need onions, it adds them up) and organizes everything by store section.
+
+**Ask Claude:** *"Generate a shopping list for these three recipes, organized by store section"*
+
+---
+
 ## Creating Your Own Templates
 
 These templates evolved from my specific needs. Yours might be different! Some ideas:
