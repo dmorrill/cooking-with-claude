@@ -2,6 +2,47 @@
 
 An intelligent cooking workflow that combines recipe management, meal planning, and real-time inventory tracking. Make better food decisions with AI-powered meal suggestions based on what you actually have at home.
 
+## Requirements
+
+This project uses **[Claude Code](https://docs.anthropic.com/en/docs/claude-code)**, Anthropic's command-line tool for Claude. Claude Code can read and edit files on your computer, which is what makes this cooking system work - it reads your inventory files to suggest meals you can actually make.
+
+**You'll need:**
+- A Claude Pro, Max, or Team subscription ($20+/month)
+- macOS or Linux (Windows via WSL)
+- Node.js 18+
+
+## Setup
+
+### 1. Install Claude Code
+
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+### 2. Clone this repository
+
+```bash
+git clone https://github.com/dmorrill/cooking-with-claude.git
+cd cooking-with-claude
+```
+
+### 3. Launch Claude Code
+
+```bash
+claude
+```
+
+That's it! Claude will automatically read the `CLAUDE.md` file in this directory and understand how to help you with meal planning.
+
+### 4. Start using it
+
+Once Claude Code is running, try:
+```
+"What can I cook in 30 minutes with what I have?"
+```
+
+Claude will read your inventory files and suggest meals based on what's actually in your kitchen.
+
 ## Quick Start
 
 **Tonight's Dinner in 3 Steps:**
@@ -111,13 +152,13 @@ See `templates/prep-and-assemble-workflow.md` for full workflow details.
 - **Save Money**: Shop with purpose, avoid duplicate purchases
 - **Less Stress**: Always know you can make something good
 
-## Getting Started
+## Getting Started (After Setup)
 
-1. **Customize Inventory Structure**: Adjust folders to match your home (kitchen, garage, basement, etc.)
-2. **Update Inventory**: Fill out your current food storage locations
-3. **Add Recipes**: Use templates in `recipes/recipe-database.md`
-4. **Start Asking**: Try the AI meal matching commands above
-5. **Iterate**: Update inventory as you cook and shop
+1. **Populate your inventory first**: The system only works if Claude knows what food you have. Start by telling Claude: *"Help me fill out my kitchen pantry inventory"*
+2. **Customize inventory structure**: Adjust folders to match your home layout (rename upstairs/downstairs, add/remove locations)
+3. **Add your recipes**: Use templates in `recipes/recipe-database.md` or just tell Claude about dishes you like to make
+4. **Start asking**: Try the AI meal matching commands above
+5. **Keep it updated**: Tell Claude when you buy groceries or use up ingredients
 
 ## Customization
 
@@ -129,4 +170,4 @@ This template is designed to be customized to your home:
 
 ---
 
-*Built for use with [Claude Code](https://claude.ai/claude-code) - see CLAUDE.md for AI assistant configuration*
+*Built for use with [Claude Code](https://docs.anthropic.com/en/docs/claude-code) - see CLAUDE.md for AI assistant configuration*
