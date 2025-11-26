@@ -11,7 +11,7 @@ A template for managing recipes, meal planning, and cooking projects with Claude
 | [**recipes/**](recipes/) | 20+ tested recipes organized by category (mains, soups, breads, etc.) with a guide for adding your own |
 | [**examples/thanksgiving-2025/**](examples/thanksgiving-2025/) | Complete holiday meal plan: 7 dishes, 4-day prep schedule, hour-by-hour cooking timeline |
 | [**templates/**](templates/) | Workflows for collaborative cooking, recipe formatting, and shopping lists |
-| **inventory/** | Track what's in your kitchen (optional - start here if you want AI meal suggestions) |
+| [**inventory/**](inventory/master-inventory.md) | Track what's in your kitchen (optional - start here if you want AI meal suggestions) |
 
 **Quick links:**
 - [Browse all recipes](recipes/README.md)
