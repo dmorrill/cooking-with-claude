@@ -1,6 +1,24 @@
 # Cooking with Claude
 
-An intelligent cooking workflow that combines recipe management, meal planning, and real-time inventory tracking. Make better food decisions with AI-powered meal suggestions based on what you actually have at home.
+A template for managing recipes, meal planning, and cooking projects with Claude Code. Start simple with recipes, or go deep with inventory tracking and automated shopping lists.
+
+> **Real recipes inside!** This isn't empty scaffolding. Browse 20+ tested recipes, a complete Thanksgiving meal plan, and templates I actually use. Fork it and make it yours.
+
+## What's Inside
+
+| Folder | What You'll Find |
+|--------|------------------|
+| [**recipes/**](recipes/) | 20+ tested recipes organized by category (mains, soups, breads, etc.) with a guide for adding your own |
+| [**examples/thanksgiving-2025/**](examples/thanksgiving-2025/) | Complete holiday meal plan: 7 dishes, 4-day prep schedule, hour-by-hour cooking timeline |
+| [**templates/**](templates/) | Workflows for collaborative cooking, recipe formatting, and shopping lists |
+| **inventory/** | Track what's in your kitchen (optional - start here if you want AI meal suggestions) |
+
+**Quick links:**
+- [Browse all recipes](recipes/README.md)
+- [See the Thanksgiving example](examples/thanksgiving-2025/README.md)
+- [Explore the templates](templates/README.md)
+
+---
 
 ## Requirements
 
@@ -72,25 +90,26 @@ Claude will read your inventory files and suggest meals based on what's actually
 ```
 cooking-with-claude/
 ├── recipes/
-│   ├── recipe-database.md      # Recipe collection & templates
-│   ├── meal-matcher.md         # AI meal suggestion engine
-│   └── meal-planning-helper.md # Weekly planning workflows
-├── inventory/
-│   ├── master-inventory.md     # Central dashboard
-│   ├── upstairs/               # Upper level storage (customize)
-│   │   ├── pantry.md
-│   │   ├── refrigerator.md
-│   │   └── freezer.md
-│   ├── downstairs/             # Main kitchen storage (customize)
-│   │   ├── pantry.md
-│   │   ├── refrigerator.md
-│   │   └── freezer.md
-│   └── basement/               # Long-term storage (optional)
-│       └── food-storage.md
+│   ├── README.md               # Recipe index + how to add recipes
+│   ├── mains/                  # Main dishes (pasta, sandwiches, etc.)
+│   ├── soups/                  # Soups
+│   ├── salads/                 # Salads
+│   ├── sides/                  # Side dishes
+│   ├── breads/                 # Breads and rolls
+│   ├── condiments/             # Sauces and condiments
+│   ├── desserts/               # Desserts
+│   └── cocktails/              # Drinks
+├── examples/
+│   └── thanksgiving-2025/      # Complete meal planning example
 ├── templates/
-│   ├── recipe-template.md
-│   └── prep-and-assemble-workflow.md
-└── shopping-list.md            # Smart shopping lists
+│   ├── README.md               # How to use the templates
+│   ├── recipe-template.md      # Standard recipe format
+│   ├── prep-and-assemble-workflow.md  # Collaborative cooking
+│   └── shopping-list-template.md      # Shopping list format
+├── inventory/                  # Optional: track what's in your kitchen
+│   ├── master-inventory.md
+│   └── [location folders]/     # Customize to your home layout
+└── CLAUDE.md                   # AI assistant configuration
 ```
 
 ## AI-Powered Workflows
@@ -154,11 +173,17 @@ See `templates/prep-and-assemble-workflow.md` for full workflow details.
 
 ## Getting Started (After Setup)
 
-1. **Populate your inventory first**: The system only works if Claude knows what food you have. Start by telling Claude: *"Help me fill out my kitchen pantry inventory"*
-2. **Customize inventory structure**: Adjust folders to match your home layout (rename upstairs/downstairs, add/remove locations)
-3. **Add your recipes**: Use templates in `recipes/recipe-database.md` or just tell Claude about dishes you like to make
-4. **Start asking**: Try the AI meal matching commands above
-5. **Keep it updated**: Tell Claude when you buy groceries or use up ingredients
+### Path 1: Just Use the Recipes (Simple)
+1. **Browse recipes**: Check out [recipes/README.md](recipes/README.md) for the full index
+2. **Cook something**: Ask Claude *"Walk me through making the cacio e pepe step by step"*
+3. **Add your own**: Paste a recipe PDF or describe a dish you want to add
+4. **Plan a meal**: See the [Thanksgiving example](examples/thanksgiving-2025/) for complex meal planning
+
+### Path 2: Full System with Inventory (Advanced)
+1. **Populate your inventory**: Tell Claude *"Help me fill out my kitchen pantry inventory"*
+2. **Customize locations**: Adjust inventory folders to match your home layout
+3. **Get AI suggestions**: *"What can I cook in 30 minutes with what I have?"*
+4. **Keep it updated**: Tell Claude when you buy groceries or use things up
 
 ## Customization
 
