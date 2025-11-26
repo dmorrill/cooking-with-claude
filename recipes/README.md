@@ -2,6 +2,8 @@
 
 A collection of recipes organized by category. Each recipe is a separate markdown file that Claude can read, search, and help you cook from.
 
+> **Note:** These aren't placeholder recipes. Every recipe in this collection has been cooked, tested, and refined through collaboration with Claude. They include real-world learnings like altitude adjustments for Denver (5,280 ft), technique notes from multiple authoritative sources, and practical tips discovered through actual cooking. Use them as examples of what your own recipe collection can become!
+
 ## Adding New Recipes
 
 ### From a PDF or Image
