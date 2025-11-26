@@ -79,12 +79,16 @@ Claude will:
 | [Quick Altitude Pizza Dough](mains/pizza-dough.md) | 45-60 min | Fast-rise semolina pizza dough |
 | [Miso-Gochujang Tofu Sheet Pan](mains/miso-gochujang-tofu.md) | 30 min | Easy weeknight vegan meal |
 
-### Soups & Salads
+### Soups
 | Recipe | Time | Description |
 |--------|------|-------------|
 | [Coconut Butternut Squash Soup](soups/coconut-butternut-squash.md) | 2 hrs | Creamy vegan soup with curry and coconut milk |
 | [Creamy Leek & White Bean Soup](soups/leek-white-bean.md) | 75 min | Double wine reduction, slow-caramelized leeks |
-| [Green Romesco Couscous Salad](soups/green-romesco-salad.md) | 50 min | Herb-based romesco with roasted vegetables |
+
+### Salads
+| Recipe | Time | Description |
+|--------|------|-------------|
+| [Green Romesco Couscous Salad](salads/green-romesco-salad.md) | 50 min | Herb-based romesco with roasted vegetables |
 
 ### Sides
 | Recipe | Time | Description |
