@@ -4,6 +4,8 @@ A template for managing recipes, meal planning, and cooking projects with Claude
 
 > **Real recipes inside!** This isn't empty scaffolding. Browse 20+ tested recipes, a complete Thanksgiving meal plan, and templates I actually use. Fork it and make it yours.
 
+📝 **[Read the blog post: "Cooking With Claude - Learning to Practice Life in Small, Delicious Pieces"](https://ellemorrill.substack.com/p/cooking-with-claude)** | [Markdown version](2025-12-04-introducing-cooking-with-claude.md)
+
 ## What's Inside
 
 | Folder | What You'll Find |
