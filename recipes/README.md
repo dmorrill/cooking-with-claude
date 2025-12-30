@@ -71,6 +71,11 @@ Claude will:
 
 ## Recipe Index
 
+### Appetizers
+| Recipe | Time | Description |
+|--------|------|-------------|
+| [Beet & Goat Cheese Phyllo Tartlets](appetizers/beet-goat-cheese-phyllo-tartlets.md) | 45 min | Elegant bite-sized tartlets with roasted beets and goat cheese |
+
 ### Mains
 | Recipe | Time | Description |
 |--------|------|-------------|
@@ -80,12 +85,16 @@ Claude will:
 | [SF Giants Crazy Crab Sandwich](mains/crazy-crab-sandwich.md) | 75 min | Dungeness crab with garlic-grilled sourdough |
 | [Quick Altitude Pizza Dough](mains/pizza-dough.md) | 45-60 min | Fast-rise semolina pizza dough |
 | [Miso-Gochujang Tofu Sheet Pan](mains/miso-gochujang-tofu.md) | 30 min | Easy weeknight vegan meal |
+| [Mushroom-Enhanced Soyrizo](mains/mushroom-enhanced-soyrizo.md) | 30 min | Umami-rich plant-based taco filling with mushrooms |
+| [Creamy Bucatini with Mushrooms & Two Cheeses](mains/creamy-bucatini-with-mushrooms-and-two-cheeses.md) | 40 min | Rich pasta with mushroom duxelles and cheese sauce |
+| [Spicy Mushroom Lasagna](mains/spicy-mushroom-lasagna-make-ahead.md) | 2.5 hrs | Make-ahead lasagna with layers of mushroom duxelles |
 
 ### Soups
 | Recipe | Time | Description |
 |--------|------|-------------|
 | [Coconut Butternut Squash Soup](soups/coconut-butternut-squash.md) | 2 hrs | Creamy vegan soup with curry and coconut milk |
 | [Creamy Leek & White Bean Soup](soups/leek-white-bean.md) | 75 min | Double wine reduction, slow-caramelized leeks |
+| [Vegan Tomato-Bean Stew](soups/vegan-tomatobean-stew.md) | 60 min | Hearty stew with tomatoes, beans, and vegetables |
 
 ### Salads
 | Recipe | Time | Description |
@@ -97,6 +106,8 @@ Claude will:
 |--------|------|-------------|
 | [Roasted Butternut Squash](sides/roasted-butternut-squash.md) | 40 min | Simple roasted cubes with olive oil and spices |
 | [Steaming Guide (Altitude)](sides/steaming-guide.md) | - | Reference for steaming vegetables at altitude |
+| [Restaurant-Style Mexican Rice](sides/restaurant-style-mexican-rice.md) | 45 min | Fluffy, flavorful rice with tomato and aromatics |
+| [Spiced Black Beans with Roasted Delicata & Sungold Tomato Puree](sides/spiced-black-beans-with-roasted-delicata-sungold-tomato-puree.md) | 90 min | Complex side with roasted squash and tomato puree |
 
 ### Breads
 | Recipe | Time | Description |
@@ -104,24 +115,47 @@ Claude will:
 | [Parker House Rolls](breads/parker-house-rolls.md) | 3 hrs | Classic buttery folded rolls (small batch) |
 | [Pumpkin Parker House Rolls](breads/pumpkin-parker-house-rolls.md) | 3 hrs | Autumn twist with pumpkin puree |
 | [Sweet Potato Pull-Apart Rolls](breads/sweet-potato-rolls.md) | 4 hrs | Soft, buttery rolls with sweet potato |
+| [Quick Altitude Pizza Dough](breads/quick-altitude-pizza-dough.md) | 45-60 min | Fast-rise semolina pizza dough for Denver altitude |
+| [Yorkshire Puddings (Small Batch)](breads/yorkshire-puddings-small-batch.md) | 45 min | Classic British popovers - 4 servings |
+| [Rosemary Labneh Pull-Apart Rolls](breads/rosemary-labneh-pull-apart-rolls-small-batch-4-rolls.md) | 3 hrs | Tangy rolls with rosemary and labneh - 4 rolls |
 
-### Condiments & Sauces
+### Desserts
+| Recipe | Time | Description |
+|--------|------|-------------|
+| [Basque Pumpkin Cheesecake](desserts/basque-pumpkin-cheesecake.md) | 4 hrs | Burnt-top seasonal cheesecake, no crust |
+| [Molasses Ginger Cookies](desserts/molasses-ginger-cookies.md) | 2 hrs | Chewy spiced cookies with crystallized ginger |
+| [Maple Pecan Sticky Buns](desserts/maple-pecan-sticky-buns.md) | 4 hrs | Decadent rolls with maple-pecan topping |
+| [Christmas Fudge](desserts/christmas-fudge.md) | 3 hrs | Rich chocolate fudge for holiday gifting |
+
+### Condiments
 | Recipe | Time | Description |
 |--------|------|-------------|
 | [Red Pepper Miso Paste](condiments/red-pepper-miso-paste.md) | 75 min | Deeply caramelized, umami-rich condiment |
 | [Green Chili Bean Sauce](condiments/green-chili-bean-sauce.md) | 40 min | Batch-freezer condiment |
 | [Harissa Cashew Cream](condiments/harissa-cashew-cream.md) | 20 min | Velvety sauce with Middle Eastern spices |
 | [Peking-Style Plum Sauce](condiments/plum-sauce.md) | overnight + 1 hr | For smoked duck |
-
-### Desserts
-| Recipe | Time | Description |
-|--------|------|-------------|
-| [Basque Pumpkin Cheesecake](desserts/basque-pumpkin-cheesecake.md) | 4 hrs | Burnt-top seasonal cheesecake, no crust |
+| [Mushroom Duxelles](condiments/mushroom-duxelles.md) | 45 min | Concentrated mushroom paste for elevating dishes |
+| [Au Jus for Roast Beef Sandwiches](condiments/au-jus-for-roast-beef-sandwiches.md) | 2 hrs | Rich dipping sauce for French dip sandwiches |
+| [Goat Cheese Beet Dip](condiments/goat-cheese-beet-dip.md) | 90 min | Vibrant pink dip with roasted beets and goat cheese |
 
 ### Cocktails
 | Recipe | Time | Description |
 |--------|------|-------------|
 | [Autumn Pear Royale](cocktails/autumn-pear-royale.md) | 5 min | Elegant fall cocktail with pear brandy & Sauternes |
+
+---
+
+## Recipe Resources
+
+### Make-Ahead Components
+| Resource | Description |
+|----------|-------------|
+| [Make-Ahead Components](make-ahead-components.md) | Guide to prep-ahead ingredients and batch cooking strategies |
+
+### Restaurant Staples
+| Resource | Description |
+|----------|-------------|
+| [Restaurant Staples](restaurant-staples.md) | Essential components that restaurants prep in advance for quick service |
 
 ---
 
