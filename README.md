@@ -31,6 +31,10 @@ This project uses **[Claude Code](https://docs.anthropic.com/en/docs/claude-code
 - macOS or Linux (Windows via WSL)
 - Node.js 18+
 
+### Optional: MCP Server for Claude Desktop
+
+If you also use Claude Desktop, there's an included MCP (Model Context Protocol) server that gives Claude direct access to your cooking data. This lets you ask questions like "What can I make with what's in my fridge?" directly in Claude Desktop. See the [MCP Setup Guide](#mcp-server-optional) below.
+
 ## Setup
 
 ### 1. Install Claude Code
@@ -194,6 +198,55 @@ This template is designed to be customized to your home:
 - **Rename inventory folders**: Change `upstairs/downstairs` to match your layout
 - **Add/remove storage locations**: Not everyone has a basement or chest freezer
 - **Adjust recipe categories**: Organize by cuisine, dietary restrictions, or whatever works for you
+
+---
+
+## MCP Server (Optional)
+
+If you use Claude Desktop, you can enable the included MCP server for direct access to your cooking data. This lets you:
+- Search recipes by ingredients or prep time
+- Check your inventory across all locations
+- Get meal suggestions based on what you have
+- Update inventory directly from Claude Desktop
+- Find items expiring soon
+
+### MCP Setup
+
+1. **Install dependencies:**
+```bash
+cd cooking-mcp
+npm install
+```
+
+2. **Configure Claude Desktop:**
+
+Find your Claude Desktop configuration file:
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+Add the cooking MCP server:
+```json
+{
+  "mcpServers": {
+    "cooking-mcp": {
+      "command": "node",
+      "args": ["/path/to/cooking-with-claude/cooking-mcp/src/index.js"]
+    }
+  }
+}
+```
+
+Replace `/path/to/cooking-with-claude` with your actual path.
+
+3. **Restart Claude Desktop**
+
+4. **Try it out!** Ask Claude Desktop:
+   - "What recipes can I make in 30 minutes?"
+   - "Check my pantry inventory"
+   - "Add milk to upstairs refrigerator"
+   - "What's expiring soon?"
+
+For full MCP documentation, see [cooking-mcp/README.md](cooking-mcp/README.md).
 
 ---
 

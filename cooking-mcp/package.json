@@ -1,0 +1,29 @@
+{
+  "name": "cooking-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for intelligent cooking management with recipes, inventory, and meal planning",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "cooking-mcp": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "cooking",
+    "recipes",
+    "meal-planning",
+    "inventory"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
+}
