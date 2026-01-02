@@ -1,137 +1,135 @@
-# When Your Side Project Becomes Magic: The MCP Update That Changed Everything
+# Adding MCP to cooking-with-claude: A Technical Walkthrough
 
 *Published on X.com - January 1, 2026*
 
 ---
 
-A few days ago, [I posted about the improvements](https://x.com/DanielleMorrill/status/2006003493098734028) I'd been making to cooking-with-claude. Recipe reorganization. Better workflows. Nice incremental progress.
+A few days ago, [I posted about reorganizing cooking-with-claude](https://x.com/DanielleMorrill/status/2006003493098734028) - splitting recipes into individual files, improving workflows. Today I added MCP (Model Context Protocol) support, which lets you interact with the cooking system using natural language in Claude Desktop.
 
-Today? Today I asked Claude to upgrade itself, and my mind is blown.
+## What I Built
 
-## The Timeline
+I asked Claude Code to create an MCP server for the cooking repository. In about 30 minutes, it generated a working Node.js server with 9 tools:
 
-**December 28**: Reorganizing recipes, improving workflows, good solid work
-**January 1**: "Hey Claude, can you add inventory management to the MCP server?"
-**30 minutes later**: I'm updating my pantry by talking to Claude Desktop like it's my sous chef
+**Recipe Tools:**
+- `search_recipes` - Find recipes by name, ingredients, or prep time
+- `get_recipe` - Retrieve full recipe details
+- `suggest_meals` - Get meal suggestions based on inventory and time constraints
+- `check_recipe_ingredients` - See what you have/need for a recipe
 
-The speed of this shift is breaking my brain.
+**Inventory Tools:**
+- `check_inventory` - Query ingredients across all storage locations
+- `find_expiring_items` - List items expiring within specified days
+- `update_inventory_item` - Update quantities, expiration dates, notes
+- `add_inventory_item` - Add new items to inventory
+- `remove_inventory_item` - Remove items from inventory
 
-## What Just Happened
+## How It Works
 
-I asked Claude Code to build an MCP (Model Context Protocol) server for my cooking system. Not to write some functions. Not to help me plan it. To BUILD THE WHOLE THING.
+The MCP server reads and writes to the same markdown files that the cooking system uses:
 
-It wrote 1,400 lines of code that:
-- Created 9 working tools for recipe and inventory management
-- Handles all the file I/O and markdown parsing
-- Auto-detects paths (zero configuration!)
-- Just... works
+```
+cooking-with-claude/
+├── recipes/
+│   ├── mains/
+│   ├── sides/
+│   └── ...
+├── inventory/
+│   ├── upstairs/
+│   ├── downstairs/
+│   └── basement/
+└── cooking-mcp/
+    └── src/
+        ├── index.js        # MCP server
+        ├── recipes.js      # Recipe manager
+        └── inventory.js    # Inventory manager
+```
 
-Then I installed it in 2 minutes and now I can say things like:
-- "What can I make in 30 minutes with what I have?"
-- "Add milk to the upstairs fridge, expires January 15"
-- "Find recipes that use mushrooms"
-- "What's expiring soon?"
+The server uses the `@modelcontextprotocol/sdk` package and auto-detects the repository location, so it works with any fork without configuration changes.
 
-No code. No terminal. Just conversation.
+## Installation Process
 
-## The Leap from Good to Magic
+For anyone using the cooking-with-claude repo:
 
-Look at the progression:
+1. Clone the repository
+2. Install the MCP server:
+   ```bash
+   cd cooking-mcp
+   npm install
+   ```
 
-**Version 1**: "Here's a markdown template for recipes"
-**Version 2**: "Now recipes are organized in folders"
-**Version 2.1**: "Now just TALK TO CLAUDE ABOUT YOUR COOKING"
+3. Add to Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+   ```json
+   {
+     "mcpServers": {
+       "cooking-mcp": {
+         "command": "node",
+         "args": ["/path/to/cooking-with-claude/cooking-mcp/src/index.js"]
+       }
+     }
+   }
+   ```
 
-It's like going from:
-- Horse → Better horse → CAR
+4. Restart Claude Desktop
 
-## The Part That's Breaking Me
+## Practical Examples
 
-I've been building software for 20 years. The normal cycle is:
-1. Have idea (5 minutes)
-2. Design system (2 days)
-3. Write code (2 weeks)
-4. Debug (??? weeks)
-5. Documentation (lol never)
-6. Actually use it (maybe)
+Instead of editing markdown files, you can now have conversations like:
 
-The new cycle:
-1. Have idea (5 minutes)
-2. Ask Claude (1 minute)
-3. Watch it build itself (30 minutes)
-4. Use it immediately (forever)
+**Finding meals:**
+- "What can I cook in 30 minutes with what I have?"
+- "Show me recipes that use bell peppers"
+- "What's expiring in the next 3 days?"
 
-## Real Results This Week
+**Managing inventory:**
+- "Add 2 pounds of chicken to the downstairs freezer"
+- "Update milk in upstairs fridge - expires January 15"
+- "Remove the used garlic from downstairs pantry"
 
-Since adding the MCP server:
-- Found dinner without shopping 3 nights in a row
-- Discovered forgotten frozen salmon in the basement
-- Used up $40 of food that would have gone bad
-- Added groceries to inventory as I unpacked them - just by talking
+**Meal planning:**
+- "Suggest three dinners for this week using what's in the fridge"
+- "Do I have everything for the pasta carbonara recipe?"
 
-But more importantly: **I actually enjoy maintaining the system now.**
+## Technical Details
 
-No friction. No "I should update my inventory but ugh, editing markdown." Just "Hey Claude, we're out of olive oil."
+The implementation is straightforward:
+- ~1,400 lines of JavaScript across 3 files
+- Preserves markdown table formatting when updating inventory
+- Handles relative paths for recipe cross-references
+- Fuzzy matching for ingredient searches
+- Date parsing for expiration tracking
 
-## The Open Source Magic
+The code is all in the repository if you want to extend it or adapt it for other use cases.
 
-Everything's on GitHub: [cooking-with-claude](https://github.com/dmorrill/cooking-with-claude)
+## Results So Far
 
-What's wild is you don't need to understand the code. You need to:
-1. Clone the repo
-2. Run `npm install`
-3. Add 3 lines to a config file
-4. Start talking to Claude about cooking
+Since adding MCP support:
+- Inventory updates are much faster (speaking vs typing/formatting)
+- I actually maintain the inventory now because there's no friction
+- Finding recipes based on what's available is instant
+- Discovered items I'd forgotten about by asking "what expires soon?"
 
-Your AI assistant can literally walk you through setting up its own upgrades.
+## Next Steps
 
-## The Philosophical Bit
+The current implementation covers the basics. Some ideas for expansion:
+- Shopping list generation from meal plans
+- Nutrition tracking
+- Recipe scaling
+- Photo attachments for recipes
+- Integration with grocery delivery APIs
 
-We talk about "eating your own dog food" in software. This is deeper. This is the tool improving itself. Claude Code gave Claude Desktop new powers because I asked nicely.
+The repository is open source: [cooking-with-claude](https://github.com/dmorrill/cooking-with-claude)
 
-If AI can upgrade itself this easily, what else is possible?
-
-Today: "Add inventory management"
-Tomorrow: "Notice I always forget to defrost chicken and remind me"
-Next week: "Track my nutrition and suggest improvements"
-Next month: "Plan my garden based on what I cook most"
-
-The barrier isn't technical anymore. It's imagination.
-
-## The Call to Action
-
-If you cook (or want to cook more), grab this system. It's free, open source, and Claude will help you set it up.
-
-But more importantly: What system in YOUR life needs this treatment?
-
-What friction could disappear if you just... asked?
-
-What would you build if building took 30 minutes instead of 30 days?
-
-## We're Living in the Future
-
-That [previous post](https://x.com/DanielleMorrill/status/2006003493098734028) feels like it was from a different era, and it was 4 days ago.
-
-The pace of improvement isn't just fast. It's exponential. And we can all ride this wave.
-
-I asked my AI to upgrade itself. It did. Now I have cooking superpowers everywhere Claude runs.
-
-If that's not living in the future, I don't know what is.
-
----
-
-*P.S. - Started this as a "cooking app" to manage my ADHD kitchen chaos. Now it's become a glimpse into a world where software builds itself based on conversation. The future is wilder than we think.*
-
-*P.P.S. - Yes, Claude helped write this post about Claude building Claude new features. The recursion is not lost on me. Or on Claude. We both think it's hilarious.*
+If you're already using cooking-with-claude, the MCP addition is backward compatible - your existing files work as-is. If you're new to it, Claude can help you set up the whole system.
 
 ---
 
-**Try it yourself:**
+*Context: I've been building cooking-with-claude to manage ADHD-related kitchen chaos. Version 1 was basic templates. Version 2 reorganized everything into individual files. Version 2.1 adds natural language interaction through MCP.*
+
+---
+
+**Links:**
 - 🔗 GitHub: [cooking-with-claude](https://github.com/dmorrill/cooking-with-claude)
-- 🌟 Goal: 100 stars by Jan 31 (help us get there!)
-- 🔗 Previous improvements: [X thread](https://x.com/DanielleMorrill/status/2006003493098734028)
-- 🔗 Claude Code: [Get started](https://claude.ai/claude-code)
+- 🔗 Previous improvements: [December 28 thread](https://x.com/DanielleMorrill/status/2006003493098734028)
+- 🔗 MCP documentation: [modelcontextprotocol.io](https://modelcontextprotocol.io)
 
-**The thread that started it:** [December 28 improvements](https://x.com/DanielleMorrill/status/2006003493098734028)
-
-#AI #MCP #ClaudeCode #OpenSource #CookingWithClaude #TheFuture #BuildInPublic #AGI
+#MCP #ClaudeDesktop #OpenSource #CookingWithClaude #BuildInPublic
