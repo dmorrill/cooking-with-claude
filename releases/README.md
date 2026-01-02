@@ -13,7 +13,7 @@ Each release contains:
 
 ### 🚀 Latest Release
 
-#### [v1.1.0 - MCP Integration](v1.1.0-mcp-integration/)
+#### [v2.1.0 - MCP Integration](v2.1.0-mcp-integration/)
 *Released: January 1, 2026*
 
 Natural language cooking management through Claude Desktop! Talk to Claude naturally about your inventory and recipes.
@@ -24,11 +24,25 @@ Natural language cooking management through Claude Desktop! Talk to Claude natur
 - Direct inventory updates without editing markdown
 - Automatic path detection
 
-[Read Changelog](v1.1.0-mcp-integration/CHANGELOG.md) | [Release Notes](v1.1.0-mcp-integration/RELEASE-NOTES.md) | [Social Media](v1.1.0-mcp-integration/SOCIAL-MEDIA.md)
+[Read Changelog](v2.1.0-mcp-integration/CHANGELOG.md) | [Release Notes](v2.1.0-mcp-integration/RELEASE-NOTES.md) | [Social Media](v2.1.0-mcp-integration/SOCIAL-MEDIA.md)
 
 ---
 
 ### 📜 Previous Releases
+
+#### [v2.0.0 - Recipe Reorganization](v2.0.0-recipe-reorganization/)
+*Released: December 2025*
+
+**BREAKING CHANGE**: Complete reorganization of recipe structure! Monolithic database split into individual files for better usability.
+
+**Highlights:**
+- 45+ recipes extracted into individual markdown files
+- 8 category folders for easy browsing
+- New collaborative cooking workflows
+- Restaurant review system
+- 90% reduction in AI token usage
+
+[Read Changelog](v2.0.0-recipe-reorganization/CHANGELOG.md) | [Release Notes](v2.0.0-recipe-reorganization/RELEASE-NOTES.md)
 
 #### v1.0.0 - Initial Public Release
 *Released: December 5, 2024*
@@ -48,7 +62,8 @@ The first public release of cooking-with-claude, featuring:
 
 | Version | Date | Feature | Breaking Changes |
 |---------|------|---------|-----------------|
-| v1.1.0 | 2026-01-01 | MCP Server Integration | No |
+| v2.1.0 | 2026-01-01 | MCP Server Integration | No |
+| v2.0.0 | 2025-12 | Recipe Reorganization | Yes - File structure changed |
 | v1.0.0 | 2024-12-05 | Initial Public Release | N/A |
 
 ## Versioning Policy

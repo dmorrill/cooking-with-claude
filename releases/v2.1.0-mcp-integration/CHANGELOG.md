@@ -1,4 +1,4 @@
-# Version 1.1.0 - MCP Integration
+# Version 2.1.0 - MCP Integration
 Released: January 1, 2026
 
 ## 🎯 Release Overview
