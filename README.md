@@ -2,7 +2,7 @@
 
 A template for managing recipes, meal planning, and cooking projects with Claude Code. Start simple with recipes, or go deep with inventory tracking and automated shopping lists.
 
-> **Real recipes inside!** This isn't empty scaffolding. Browse 20+ tested recipes, a complete Thanksgiving meal plan, and templates I actually use. Fork it and make it yours.
+> **Real recipes inside!** This isn't empty scaffolding. Browse 40+ tested recipes across 9 categories, a complete Thanksgiving meal plan, meal planning workflows, and templates I actually use. Fork it and make it yours.
 
 📝 **[Read the blog post: "Cooking With Claude - Learning to Practice Life in Small, Delicious Pieces"](https://ellemorrill.substack.com/p/cooking-with-claude)** | [Markdown version](2025-12-04-introducing-cooking-with-claude.md)
 
@@ -10,9 +10,11 @@ A template for managing recipes, meal planning, and cooking projects with Claude
 
 | Folder | What You'll Find |
 |--------|------------------|
-| [**recipes/**](recipes/) | 20+ tested recipes organized by category (mains, soups, breads, etc.) with a guide for adding your own |
+| [**recipes/**](recipes/) | 40+ tested recipes organized by category (mains, soups, breads, breakfast, desserts, etc.) with meal planning tools |
 | [**examples/thanksgiving-2025/**](examples/thanksgiving-2025/) | Complete holiday meal plan: 7 dishes, 4-day prep schedule, hour-by-hour cooking timeline |
-| [**templates/**](templates/) | Workflows for collaborative cooking, recipe formatting, and shopping lists |
+| [**templates/**](templates/) | Workflows for collaborative cooking, meal planning, food rescue, restaurant reviews, and shopping lists |
+| [**pantry-staples-checklist.md**](pantry-staples-checklist.md) | Essential ingredients to keep stocked, organized by category |
+| [**meal-planning-preferences.md**](meal-planning-preferences.md) | Track dietary goals, ingredient priorities, and preferences |
 | [**inventory/**](inventory/) | Track what's in your kitchen (optional - enables "what can I make?" suggestions) |
 
 **Quick links:**
@@ -97,21 +99,24 @@ Claude will read your inventory files and suggest meals based on what's actually
 cooking-with-claude/
 ├── recipes/
 │   ├── README.md               # Recipe index + how to add recipes
-│   ├── mains/                  # Main dishes (pasta, sandwiches, etc.)
-│   ├── soups/                  # Soups
-│   ├── salads/                 # Salads
-│   ├── sides/                  # Side dishes
-│   ├── breads/                 # Breads and rolls
-│   ├── condiments/             # Sauces and condiments
-│   ├── desserts/               # Desserts
-│   └── cocktails/              # Drinks
+│   ├── mains/                  # Main dishes (pasta, bowls, sandwiches, etc.)
+│   ├── soups/                  # Soups and stews
+│   ├── sides/                  # Side dishes and salads
+│   ├── breads-rolls/           # Breads, rolls, and croutons
+│   ├── sauces-condiments/      # Sauces, dips, and condiments
+│   ├── desserts/               # Desserts and baking
+│   ├── breakfast/              # Breakfast recipes
+│   ├── cocktails/              # Drinks
+│   ├── meal-matcher.md         # AI-powered meal suggestions
+│   └── meal-planning-helper.md # Weekly planning workflows
 ├── examples/
 │   └── thanksgiving-2025/      # Complete meal planning example
 ├── templates/
 │   ├── README.md               # How to use the templates
-│   ├── recipe-template.md      # Standard recipe format
 │   ├── prep-and-assemble-workflow.md  # Collaborative cooking
-│   └── shopping-list-template.md      # Shopping list format
+│   ├── weekly-meal-plan-template.md   # Weekly meal planning
+│   ├── going-out-of-town.md          # Food rescue before trips
+│   └── restaurant-review-template.md  # Restaurant review drafting
 ├── inventory/                  # Optional: track what's in your kitchen
 │   ├── master-inventory.md
 │   └── [location folders]/     # Customize to your home layout
