@@ -1,181 +1,240 @@
-# Prep-and-Assemble Workflow Template
-
-A collaborative cooking mode where one person handles all prep work and another handles cooking/assembly. Perfect for teaching new cooks, reducing kitchen anxiety, or making cooking a team activity.
+# Prep-and-Assemble Cooking Mode Template
 
 ## Overview
+A collaborative cooking mode where one person (the prepper) does all the prep work, and another person (the cook) handles the cooking/assembly. This reduces anxiety and creates a great learning opportunity for the cook while ensuring everything is ready to go.
 
-**Roles:**
-- **Prep Person**: All chopping, measuring, sauce-making, and station setup
-- **Cook Person**: Following instructions to cook and assemble the final dish
+---
 
-**Why it works:**
-- Reduces overwhelm for less experienced cooks
-- Creates clear division of labor
-- Prep person can guide without hovering
-- Cook person gets hands-on experience with support
+## When to Use This Mode
+- Teaching someone a new recipe
+- Date night cooking with division of labor
+- Reducing cooking stress for the assembler
+- Recipes with lots of prep but simple cooking (salads, stir-fries, bowl meals)
+
+---
 
 ## Workflow Steps
 
-### 1. Recipe Selection
-Choose recipes that work well for this mode:
-- **Best:** Cold noodle salads, stir-fries, Buddha bowls, tacos, grain salads
-- **Good:** Pasta dishes, sheet pan meals, salads with cooked proteins
-- **Avoid:** Baking, recipes requiring simultaneous multi-tasking
+### Phase 1: Recipe Setup (Claude Code)
+1. **Create GitHub Issue** for the recipe with full details
+2. **Check inventory** for all ingredients across all locations
+3. **Create todo list** divided into:
+   - Prep tasks (for the prepper)
+   - Cooking/assembly tasks (for the cook)
+4. **Create calendar event** for the cook with detailed instructions
 
-### 2. Ingredient Check
-Before starting prep:
-- [ ] Verify all ingredients are available
-- [ ] Note any substitutions needed
-- [ ] Check equipment is available and clean
+### Phase 2: Prep Work (Prepper)
+Organize prep into **containers by when they're used**:
 
-### 3. Container Organization
+#### Container Organization Strategy
+- **Container 1**: All ingredients that go in together (e.g., raw vegetables)
+- **Container 2**: Cooked components (e.g., sautéed mushrooms)
+- **Container 3**: Wet ingredients that need draining (e.g., corn)
+- **Container 4**: Final toppings/garnishes
 
-Organize prepped ingredients into numbered containers based on when they're used:
+#### Prep Tasks Checklist
+- [ ] Make any sauces/dressings
+- [ ] Prep all vegetables (chop, slice, dice - with exact measurements)
+- [ ] Cook any components that can be done ahead
+- [ ] Toast nuts/seeds if needed
+- [ ] Drain/rinse canned ingredients
+- [ ] Prep herbs and garnishes
+- [ ] Set up assembly station
 
-| Container | Contents | When Used |
-|-----------|----------|-----------|
-| 1 | First ingredients added | Step 1-2 |
-| 2 | Second batch | Step 3-4 |
-| 3 | Near end ingredients | Step 5-6 |
-| 4 | Final toppings/garnish | Finish |
+#### Assembly Station Setup
+**Equipment:**
+- Large pot (if boiling/cooking)
+- Colander (in sink)
+- Large mixing bowl (for assembly)
+- Serving bowl/platter
+- Tongs or large spoons
+- Any measuring tools needed
 
-**Tips:**
-- Label containers with step numbers
-- Group ingredients used together
-- Keep wet and dry separate
-- Prep garnishes last (stay fresh)
+**Ingredients - Arranged in Order of Use:**
+- Raw ingredients to cook (left side)
+- Sauces/dressings (center)
+- Prepped containers (labeled with step numbers)
+- Toppings (right side)
 
-### 4. Prep Instructions Format
+**Optional Helpers:**
+- Extra seasonings in small bowls (soy sauce, chili oil, etc.)
+- Citrus wedges
+- Tools for adjusting (whisk, spoons)
 
-For each ingredient, provide:
-- **Exact quantity**: "1 cup" not "some"
-- **Cut specification**: "1/4-inch dice" not "chopped"
-- **Visual reference**: "matchstick size" or "thumbnail size"
+### Phase 3: Calendar Event for the Cook
 
-**Example:**
-```
-Container 1 - Vegetables (Steps 2-3):
-- 1 red bell pepper: Remove seeds, slice into 1/4" strips
-- 1 cucumber: Peel, cut into matchsticks (1/4" x 1/4" x 3")
-- 2 green onions: Slice thin on diagonal, whites and greens separated
-```
+#### Event Structure
+**Timing:**
+- Review event: 5-10 minutes BEFORE cooking
+- Cooking event: Actual recipe time
 
-### 5. Station Setup
-
-Before cook person starts, arrange:
-
-**Left to Right (order of use):**
-```
-[Container 1] → [Container 2] → [Container 3] → [Container 4]
-```
-
-**Equipment ready:**
-- Pans/pots on stove
-- Utensils within reach
-- Serving dishes nearby
-- Towels and oven mitts accessible
-
-**Optional extras:**
-- Extra seasonings for adjusting
-- Citrus wedges for brightness
-- Fresh herbs for garnish
-
-### 6. Cooking Instructions Format
-
-For the cook person, provide:
+**Calendar Description Format:**
 
 ```
-Step 1: [Action] + [Sensory Cue]
-- "Heat oil until shimmering"
-- "Sauté until onions are translucent (3-4 min)"
-- "Cook until edges are golden brown"
+⚡ QUICK START - READ THIS FIRST ⚡
 
-Step 2: [Action] + [Container Reference]
-- "Add Container 1 (vegetables)"
-- "Stir in Container 2 (sauce)"
+🎯 WHAT YOU'RE MAKING:
+[Brief description of the dish and what to expect]
+[Final result description - appearance, temperature, style]
+
+✅ BEFORE YOU START - Everything should be prepped:
+□ [List all containers and what's in them]
+□ [List equipment that should be set up]
+□ [List any ingredients on counter]
+
+🎯 YOUR MISSION: [Simple flow summary]
+⏱️ TOTAL TIME: [Estimated time]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 WORKFLOW OVERVIEW
+
+[Visual diagram showing the flow]
+Example:
+INGREDIENT (you cook)
+    ↓
++ SAUCE (on counter)
+    ↓
++ CONTAINERS 1-3 (veggies/proteins)
+    ↓
++ CONTAINER 4 (toppings)
+    ↓
+DONE!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 STEP-BY-STEP INSTRUCTIONS
+
+STEP 1: [First action]
+→ [Detailed sub-step]
+→ [Timing if relevant]
+→ [Visual/sensory cues for doneness]
+
+[Continue for all steps...]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 COOKING TIPS:
+• [Key technique to remember]
+• [Common mistake to avoid]
+• [Quality check tip]
+
+🆘 IF SOMETHING GOES WRONG:
+• [Problem] → [Solution]
+• [Problem] → [Solution]
+• Need help? Ask! But you've got this!
+
+📖 Full recipe in GitHub Issue #[NUMBER]
 ```
 
-**Include:**
-- Time estimates
-- Visual/smell/sound cues for doneness
-- What to do if something goes wrong
+### Phase 4: Review Session (Optional but Recommended)
 
-### 7. Troubleshooting Section
+**5-10 minutes before cooking:**
+- The cook reads through the instructions once
+- Looks at all the containers
+- Visualizes the process
+- Asks any clarifying questions
 
-Common issues and solutions:
+This prevents reading AND cooking simultaneously.
 
-| Problem | Solution |
-|---------|----------|
-| Pan smoking | Reduce heat, add more oil |
-| Food sticking | Let it cook longer before flipping |
-| Sauce too thick | Add splash of water/broth |
-| Sauce too thin | Cook longer to reduce |
-| Over-seasoned | Add acid (lemon) or starch (rice) |
-| Under-seasoned | Add salt in small amounts, taste between |
+---
 
-## Calendar Event Template
+## Improvements Based on Feedback
 
-If creating a calendar event for the cook person:
+### Cook's Feedback: "Hard to Get Up to Speed"
 
-```
-Title: Cook [Recipe Name]
+**Solutions Implemented:**
 
-## Overview
-- What you're making: [Description]
-- Your role: Cooking and assembly (prep is done!)
-- Time needed: [X] minutes
-- End result: [What the finished dish looks like]
+1. **Add Overview Section** at top of instructions
+   - What the dish is (context)
+   - What it should look like when done
+   - What your job is (just cook X, just assemble Y)
+   - Total time estimate
 
-## Before You Start
-- [ ] All containers are labeled and ready
-- [ ] Equipment is set up
-- [ ] You've read through all steps once
+2. **Create Pre-Cooking Review Event**
+   - Separate 5-10 min calendar event BEFORE cooking
+   - Just overview, flow, and mental preparation
+   - No pressure, just reading
 
-## Step-by-Step Instructions
-[Detailed cooking steps with timing and sensory cues]
+3. **Label Containers with Step Numbers**
+   - Container 1: "STEP 4: Add after sauce"
+   - Container 2: "STEP 4: Add with veggies"
+   - Container 4: "STEP 5: Final toppings"
+   - Visual cues reduce mental load
 
-## Tips
-- [Key technique tips]
-- [What to watch for]
+4. **Add Workflow Diagram**
+   - Simple visual flow at top
+   - Shows ingredient progression
+   - Easy to reference while cooking
 
-## If Something Goes Wrong
-[Troubleshooting guidance]
-```
+5. **Use Visual Separators**
+   - Clear sections with dividing lines
+   - Emoji markers for different section types
+   - Easy to scan while cooking
 
-## Example: Cold Sesame Noodles
+---
 
-### Prep List (Prep Person)
+## Template Checklist
 
-**Container 1 - Vegetables:**
-- 1 cucumber: Peel, cut into matchsticks
-- 1 red bell pepper: Seed, slice into thin strips
-- 2 cups shredded purple cabbage
+### For Claude Code Agent:
 
-**Container 2 - Aromatics:**
-- 3 green onions: Sliced thin
-- 1/4 cup cilantro: Roughly chopped
-- 2 tbsp sesame seeds: Toasted
+**When starting a prep-and-assemble recipe:**
 
-**Container 3 - Sauce:**
-- 1/4 cup soy sauce
-- 2 tbsp sesame oil
-- 2 tbsp rice vinegar
-- 1 tbsp honey
-- 1 tsp chili crisp
-*(Whisked together)*
+- [ ] Create GitHub issue with full recipe details
+- [ ] Check all inventory locations for ingredients
+- [ ] Create todo list with prep tasks (Elle) and cooking tasks (Kevin)
+- [ ] Organize prep into logical containers (by usage timing)
+- [ ] Provide exact measurements and cutting instructions
+- [ ] Create pre-cooking review calendar event (5-10 min before)
+- [ ] Create main cooking calendar event with:
+  - [ ] Overview section (what, why, how long)
+  - [ ] Workflow diagram
+  - [ ] Before-you-start checklist
+  - [ ] Step-by-step instructions with sensory cues
+  - [ ] Cooking tips section
+  - [ ] Troubleshooting section
+  - [ ] Link to GitHub issue
+- [ ] Label containers with step numbers
+- [ ] Set up assembly station with equipment and ingredients
 
-**Also Ready:**
-- 8 oz rice noodles (uncooked)
-- Large pot of water on stove
-- Colander in sink
-- Large mixing bowl
+**During prep guidance:**
+- [ ] Mark tasks as in_progress/completed in real-time
+- [ ] Provide exact measurements for all ingredients
+- [ ] Specify exact cutting techniques (matchsticks, 1/4" slices, etc.)
+- [ ] Confirm each phase completion before moving to next
 
-### Assembly Instructions (Cook Person)
+**After cooking:**
+- [ ] Collect feedback on what worked/what didn't
+- [ ] Update template based on learnings
+- [ ] Add recipe to database if successful
 
-1. **Boil water** - Bring large pot to rolling boil
-2. **Cook noodles** - Add noodles, cook 4 min until tender but not mushy
-3. **Drain & rinse** - Drain in colander, rinse with cold water until cool
-4. **Combine** - Put noodles in large bowl, add Container 3 (sauce), toss well
-5. **Add vegetables** - Add Container 1, toss to combine
-6. **Garnish** - Top with Container 2 (aromatics and sesame seeds)
-7. **Serve** - Divide into bowls, enjoy cold or room temperature
+---
+
+## Example Recipes Perfect for This Mode
+
+- **Cold noodle salads** (lots of veggie prep, simple assembly)
+- **Stir-fries** (all prep done, cook quickly)
+- **Buddha bowls** (components prepped, just assemble)
+- **Tacos/burrito bowls** (toppings bar approach)
+- **Grain salads** (cook grain, toss everything together)
+
+---
+
+## Success Metrics
+
+**For the Prepper:**
+- All containers organized and labeled
+- Assembly station fully set up
+- Cook can start without asking questions
+
+**For the Cook:**
+- Feels confident starting
+- Can follow steps without stopping to read ahead
+- Final dish matches expectations
+- Learning happened without stress
+
+**For the Meal:**
+- Tastes great
+- Looks appealing
+- Made on time
+- Both people enjoyed the process

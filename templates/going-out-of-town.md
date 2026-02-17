@@ -17,12 +17,11 @@
 Check ALL refrigerator locations and categorize items:
 
 ### Locations to Check:
-Customize this list to match your home setup:
-- [ ] Main refrigerator
-- [ ] Secondary refrigerator (if applicable)
-- [ ] Freezer(s)
-- [ ] Fruit bowls/counter items
-- [ ] Pantry items that may spoil
+- [ ] Upstairs refrigerator
+- [ ] Upstairs freezer
+- [ ] Downstairs refrigerator
+- [ ] Downstairs freezer
+- [ ] Fruit bowls (counter)
 
 ### Triage Categories:
 
@@ -52,15 +51,14 @@ Customize this list to match your home setup:
 
 ### Veggie Broth (uses almost anything)
 **Best for:** Carrots, celery, onions, peppers, tomatoes, wilting herbs, mushrooms
-- Chop veggies, simmer 1.5 hours, blend, add miso/salt
+- Chop veggies, simmer 1.5 hours, blend, add miso
 - Freezes for 3 months
-- Great base for future soups
+- See: `thanksgiving-2025/recipes/vegetable-broth-2.0.md`
 
 ### Smoothie Freezer Packs
 **Best for:** Bananas, berries, leafy greens, yogurt near expiration
 - Portion into freezer bags
 - Add liquid when ready to blend
-- Label with date and contents
 
 ### Stir-Fry or Fried Rice
 **Best for:** Mixed vegetables, proteins, leftover rice
@@ -91,17 +89,15 @@ Customize this list to match your home setup:
 - [ ] Take out trash and compost
 - [ ] Empty/clean fridge of anything questionable
 - [ ] Wipe down fridge shelves if needed
-- [ ] Check counter items for anything that will attract flies
+- [ ] Check fruit bowls for anything that will attract flies
 
 ### Freezer Prep
 - [ ] Label everything with date and contents
 - [ ] Make sure nothing is buried and forgotten
-- [ ] Organize by return date (what to use first)
 
 ### Coming Home Easy
 - [ ] Leave one "welcome home" meal frozen or shelf-stable
 - [ ] Note what staples to buy on return (milk, bread, eggs, etc.)
-- [ ] Set reminder to shop day before return
 
 ---
 
@@ -120,8 +116,4 @@ Items that are good but you can't use:
 
 ---
 
-**Pro Tips:**
-- Start this process 2-3 days before leaving, not day-of
-- Take a photo of what's in freezer for reference while away
-- Consider meal planning for 2-3 days before trip to use specific items
-- Set up grocery delivery for day after return if service available
+**Template location:** `templates/going-out-of-town.md`
