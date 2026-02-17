@@ -182,7 +182,7 @@ This prevents reading AND cooking simultaneously.
 
 - [ ] Create GitHub issue with full recipe details
 - [ ] Check all inventory locations for ingredients
-- [ ] Create todo list with prep tasks (Elle) and cooking tasks (Kevin)
+- [ ] Create todo list with prep tasks (prepper) and cooking tasks (cook)
 - [ ] Organize prep into logical containers (by usage timing)
 - [ ] Provide exact measurements and cutting instructions
 - [ ] Create pre-cooking review calendar event (5-10 min before)
