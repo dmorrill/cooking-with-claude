@@ -13,6 +13,17 @@ Each release contains:
 
 ### 🚀 Latest Release
 
+#### [v3.0.0 - Ten Months of Use](v3.0.0-ten-months-of-use/)
+*Released: September 28, 2026*
+
+Set your altitude once, new templates for big meals and multi-attempt recipes, a Sunday household meal-plan card, meal-plan and leftovers tools in the MCP server, and 75 recipes.
+
+[Read Changelog](v3.0.0-ten-months-of-use/CHANGELOG.md) | [Release Notes](v3.0.0-ten-months-of-use/RELEASE-NOTES.md) | [Social Media](v3.0.0-ten-months-of-use/SOCIAL-MEDIA.md)
+
+---
+
+### Previous Releases
+
 #### [v2.1.0 - MCP Integration](v2.1.0-mcp-integration/)
 *Released: January 1, 2026*
 
@@ -25,10 +36,6 @@ Natural language cooking management through Claude Desktop! Talk to Claude natur
 - Automatic path detection
 
 [Read Changelog](v2.1.0-mcp-integration/CHANGELOG.md) | [Release Notes](v2.1.0-mcp-integration/RELEASE-NOTES.md) | [Social Media](v2.1.0-mcp-integration/SOCIAL-MEDIA.md)
-
----
-
-### 📜 Previous Releases
 
 #### [v2.0.0 - Recipe Reorganization](v2.0.0-recipe-reorganization/)
 *Released: December 2025*

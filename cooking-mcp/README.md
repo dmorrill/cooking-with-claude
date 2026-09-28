@@ -10,6 +10,8 @@ An intelligent cooking management system exposed as an MCP (Model Context Protoc
 - **Expiration Monitoring**: Find items expiring soon to reduce waste
 - **Meal Suggestions**: Get recipe suggestions based on available inventory
 - **Ingredient Matching**: Check which ingredients you have/need for specific recipes
+- **Weekly Meal Plan**: Read and edit `meal-plan.md` by day ("what's for dinner Thursday?", "put tacos on Wednesday")
+- **Leftovers**: Sort leftovers by how well they freeze and suggest what to turn them into
 
 ## Available Tools
 
@@ -175,6 +177,52 @@ Remove an item from your inventory.
 }
 ```
 
+### Weekly Meal Plan Tools
+
+These read and edit `meal-plan.md` at the repo root. Rows must keep the `| Mon 9/28 |` day format.
+
+#### 10. `get_meal_plan`
+Get the plan for one day or the whole week.
+
+**Parameters:**
+- `day` (required): `"today"`, `"tomorrow"`, a day name like `"Saturday"`, a date like `"10/1"`, or `"week"`
+
+#### 11. `set_meal`
+Set lunch or dinner for a day. Also stamps the file's **Last updated** line.
+
+**Parameters:**
+- `day` (required): same formats as above
+- `meal_type` (required): `"lunch"` or `"dinner"`
+- `meal` (required): what you're eating, e.g. `"Leftover chili 🔄"`
+- `home` (optional): `"✓"` cooking at home, `"✗"` out, `"?"` TBD
+- `notes` (optional)
+
+**Example:**
+```json
+{
+  "day": "Thursday",
+  "meal_type": "dinner",
+  "meal": "Miso-gochujang tofu",
+  "home": "✓"
+}
+```
+
+#### 12. `clear_meal`
+Clear lunch or dinner for a day.
+
+**Parameters:**
+- `day` (required)
+- `meal_type` (required): `"lunch"` or `"dinner"`
+
+### Leftovers Tool
+
+#### 13. `suggest_leftover_uses`
+Given what's left from a meal, sorts each item into freezes well / freeze with caution / add at serving, and suggests transformations (stir-fry → fried rice, roasted vegetables → frittata or soup, Mexican bowls → freezer burritos). Includes a freezer burrito assembly guide when it fits.
+
+**Parameters:**
+- `leftover_items` (required): array of items, e.g. `["cooked rice", "black beans", "salsa"]`
+- `source_recipe` (optional): what the leftovers came from
+
 ## Installation
 
 ### 1. Install Dependencies
@@ -332,9 +380,10 @@ To add a new tool:
 
 Potential features to add:
 
-- [ ] Add/update inventory items
 - [ ] Create new recipes
 - [ ] Generate shopping lists
+- [x] Weekly meal plan tools
+- [x] Leftover suggestions
 - [ ] Meal planning calendar integration
 - [ ] Nutritional information tracking
 - [ ] Recipe scaling for different serving sizes

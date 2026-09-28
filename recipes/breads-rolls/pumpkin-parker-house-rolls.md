@@ -53,10 +53,12 @@ Autumn twist on classic Parker House with pumpkin puree - tender, golden-orange 
 17. Arrange rolls in greased 6-inch pan
 18. Brush with butter and cover
 19. Let rise until puffy and touching
+20. **Don't over-proof!** At altitude, dough rises faster and can collapse if left too long
 
 ### Step 7: Bake (20-25 minutes at 365°F)
-20. Bake until golden brown
-21. Brush with butter immediately and cool 5 minutes
+21. Preheat oven to 365°F about 15 minutes before rolls finish rising (altitude adjusted)
+22. Bake until golden brown
+23. Brush with butter immediately and cool 5 minutes
 
 ## Notes
 
@@ -66,6 +68,16 @@ Autumn twist on classic Parker House with pumpkin puree - tender, golden-orange 
 - **Beautiful color**: Golden-orange hue even before baking
 - **Holiday appeal**: Perfect for Thanksgiving
 - **Storage**: Room temp 2-3 days, freeze up to 2 months
+
+## Altitude Adjustments (5,280 ft)
+
+- **Faster rise times**: Dough rises 25-35% faster at altitude - watch visual cues, not the clock
+- **First rise**: 60-75 minutes (vs ~90 min at sea level) - look for puffy, airy dough
+- **Second rise**: 30-45 minutes (vs 45-60 min at sea level) - rolls should be touching and puffy
+- **Higher oven temp**: 365°F (vs 350°F at sea level) to set structure before over-expansion
+- **Liquid vs. flour**: Flour is drier at altitude, but pumpkin adds moisture - you may need *extra* flour instead of extra liquid
+- **Weigh the flour**: Use the 90g measurement for accuracy
+- **Don't over-proof**: Most critical at altitude - over-proofed dough can collapse in the oven
 
 ## Serving Suggestions
 

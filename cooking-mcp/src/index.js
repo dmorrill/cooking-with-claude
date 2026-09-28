@@ -22,7 +22,7 @@ const defaultPath = join(__dirname, '..', '..');
 const COOKING_REPO_PATH = process.env.COOKING_REPO_PATH || defaultPath;
 const recipeManager = new RecipeManager(COOKING_REPO_PATH);
 const inventoryManager = new InventoryManager(COOKING_REPO_PATH);
-const mealPlanner = new MealPlanner(recipeManager, inventoryManager);
+const mealPlanner = new MealPlanner(recipeManager, inventoryManager, COOKING_REPO_PATH);
 
 // Create the MCP server
 const server = new Server(
@@ -241,6 +241,89 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           required: ['location', 'storage', 'item_name'],
         },
       },
+      {
+        name: 'get_meal_plan',
+        description: 'Get the meal plan for a specific day or the whole week. Supports "today", "tomorrow", day names like "Saturday", or dates like "1/4".',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            day: {
+              type: 'string',
+              description: 'Day to get plan for: "today", "tomorrow", "Saturday", "1/4", or "week" for the full week',
+            },
+          },
+          required: ['day'],
+        },
+      },
+      {
+        name: 'set_meal',
+        description: 'Set a meal (lunch or dinner) for a specific day in the meal plan',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            day: {
+              type: 'string',
+              description: 'Day to set meal for: "today", "tomorrow", "Saturday", "1/4", etc.',
+            },
+            meal_type: {
+              type: 'string',
+              description: 'Type of meal: "lunch" or "dinner"',
+            },
+            meal: {
+              type: 'string',
+              description: 'What the meal is (e.g., "Tacos", "Leftover pasta 🔄")',
+            },
+            home: {
+              type: 'string',
+              description: 'Whether cooking at home: "✓" for yes, "✗" for no/out, "?" for TBD (optional)',
+            },
+            notes: {
+              type: 'string',
+              description: 'Additional notes (optional)',
+            },
+          },
+          required: ['day', 'meal_type', 'meal'],
+        },
+      },
+      {
+        name: 'clear_meal',
+        description: 'Clear a meal from a specific day in the meal plan',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            day: {
+              type: 'string',
+              description: 'Day to clear meal from: "today", "tomorrow", "Saturday", "1/4", etc.',
+            },
+            meal_type: {
+              type: 'string',
+              description: 'Type of meal to clear: "lunch" or "dinner"',
+            },
+          },
+          required: ['day', 'meal_type'],
+        },
+      },
+      {
+        name: 'suggest_leftover_uses',
+        description: 'Suggest what to do with leftover ingredients from a meal. Categorizes by freezability and suggests transformations like burritos, fried rice, soup, etc.',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            source_recipe: {
+              type: 'string',
+              description: 'Optional name of the original recipe/meal the leftovers came from',
+            },
+            leftover_items: {
+              type: 'array',
+              items: {
+                type: 'string',
+              },
+              description: 'List of leftover items (e.g., ["rice", "black beans", "soyrizo", "roasted veggies", "tortillas", "crema", "limes"])',
+            },
+          },
+          required: ['leftover_items'],
+        },
+      },
     ],
   };
 });
@@ -382,6 +465,68 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           args.location,
           args.storage,
           args.item_name
+        );
+        return {
+          content: [
+            {
+              type: 'text',
+              text: JSON.stringify(result, null, 2),
+            },
+          ],
+        };
+      }
+
+      case 'get_meal_plan': {
+        let result;
+        if (args.day.toLowerCase() === 'week') {
+          result = await mealPlanner.getWeekPlan();
+        } else {
+          result = await mealPlanner.getMealPlan(args.day);
+        }
+        return {
+          content: [
+            {
+              type: 'text',
+              text: JSON.stringify(result, null, 2),
+            },
+          ],
+        };
+      }
+
+      case 'set_meal': {
+        const result = await mealPlanner.setMeal(
+          args.day,
+          args.meal_type,
+          args.meal,
+          args.home || null,
+          args.notes || null
+        );
+        return {
+          content: [
+            {
+              type: 'text',
+              text: JSON.stringify(result, null, 2),
+            },
+          ],
+        };
+      }
+
+      case 'clear_meal': {
+        const result = await mealPlanner.clearMeal(args.day, args.meal_type);
+        return {
+          content: [
+            {
+              type: 'text',
+              text: JSON.stringify(result, null, 2),
+            },
+          ],
+        };
+      }
+
+      case 'suggest_leftover_uses': {
+        const result = await mealPlanner.suggestLeftoverUses(
+          args.source_recipe || null,
+          args.leftover_items
         );
         return {
           content: [
