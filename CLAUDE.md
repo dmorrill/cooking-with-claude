@@ -3,6 +3,26 @@
 ## Project Overview
 Intelligent cooking management system that combines recipe database, meal planning, and real-time inventory tracking with AI-powered meal suggestions.
 
+## Your Altitude (STANDING DEFAULT)
+
+**Set your elevation once here, and Claude factors it into every cooking instruction (times, temperatures, liquids) without being asked.**
+
+**Elevation:** `[e.g. 5,280 ft]` *(delete this section if you're near sea level)*
+
+At 5,000 ft, water boils at about **202°F** instead of 212°F, so anything water-based runs slower and needs more liquid:
+- **Boiling and simmering (beans, grains, pasta, eggs, blanching):** expect **15–30% longer**. Cook to texture, not the clock. Start with a little more water, keep hot water on hand to top up, and use a cracked lid.
+- **Softening nuts** (cashews for sauces): a few extra minutes.
+- **Leavened baking:** batters over-rise and dry out. Slightly **reduce leavening** (⅛–¼ tsp less per tsp) and sugar, **add a little liquid**, raise the oven **15–25°F**, and expect a shorter bake. Flag per recipe.
+- **Candy, syrups, deep-frying:** subtract about **2°F per 1,000 ft** from sea-level target temperatures (~10°F at 5,000 ft).
+- **Pressure cooking:** add about **5% time per 1,000 ft** above 2,000 ft. Pressure is the method altitude affects least, which makes it the best tool for dried beans up high.
+- **Roasting, sautéing, searing, cold prep:** essentially unchanged.
+
+**When altitude changes a step, say so briefly** so the cook knows why the number differs from the recipe. See `recipes/techniques/cooking-beans-at-altitude.md` for a worked guide.
+
+## Nutritional Philosophy
+
+If `nutritional-philosophy.md` exists at the repo root, **read it before meal planning or suggesting recipes.** It holds the *why* behind food choices (goals, framework, per-meal screen) and should shape every suggestion. Start from `templates/nutritional-philosophy-template.md`.
+
 ## Core System Architecture
 
 ### 1. Recipe Management (`recipes/`)
@@ -67,6 +87,12 @@ Claude should proactively offer these things without being asked:
 - **Recipe database**: After successfully cooking something new, offer to save it as a new recipe file in the appropriate category
 - **Inventory updates**: After cooking, offer to update inventory for items used
 - **Food rescue**: When a trip is detected within 3 days, suggest the food rescue workflow (see Going Out of Town section)
+- **Nutritional alignment**: When planning meals, check against `nutritional-philosophy.md`. Flag a plan that's light on plants or heavy on blood-sugar-spiking foods, as a note, not a lecture
+- **Feeding window**: When scheduling dinner on the calendar, note that an earlier dinner tends to mean better sleep. Don't schedule late dinners without mentioning the trade-off
+- **Ritual drinks**: When cocktails come up, suggest non-alcoholic or low-ABV options first
+- **Olive oil freshness**: Track olive oil in a table in your pantry inventory with **harvest date** and **opened date**. Two rules: use within **18–24 months of the harvest date** (not the best-by date), and **toss 6 months after opening**. When a new bottle enters inventory, ask for the harvest date on the label; when one is opened, remind the cook to write the date on the bottle and log it. Doesn't apply to refined high-heat oils
+- **Big events**: When a special meal is more than a weeknight dinner, offer to build a prep packet (`templates/event-prep-packet.md`)
+- **Recipe development**: When a recipe is being worked out over several attempts, keep an attempt log in the recipe file (`templates/recipe-iteration-log.md`)
 
 ## Key Workflows
 
@@ -258,6 +284,59 @@ Identify which components of a recipe can be prepared in advance to reduce day-o
 - Complex recipes with many components
 - Dishes that improve with time (braises, marinated items)
 
+### Weekly Meal Plan (`meal-plan.md`)
+- **Home? column**: ✓ = cooking at home, ✗ = out, ? = TBD. Mark leftover meals with 🔄
+- **Query:** read `meal-plan.md`, find the day, report what's planned or offer to plan it
+- **Update:** edit the one cell and the "Last updated" line (the MCP server's `set_meal` does both)
+- **Weekly planning order:** Home? column → expiring items → dinners → lunches → shopping list → leftover opportunities
+
+### Interactive Meal Planning Session
+**Trigger:** "Help me plan [meal] for [day]" / "Let's plan dinner for this week"
+
+1. **The calendar is the source of truth.** Check it before `meal-plan.md`
+2. Confirm the recipe source (PDF, URL, or existing file)
+3. Check all inventory locations; list what needs buying
+4. Build the timeline backwards from when you want to eat
+5. Create calendar event(s) with the full timeline, ingredient locations, equipment, and tips. For complex meals, use a solo prep event plus a cook-together event
+6. Update `meal-plan.md`
+7. **Move, don't delete:** when a recipe doesn't fit today, move it to an open slot later in the week
+8. For big batches, plan the leftovers and put those meals on the calendar too
+
+### Household Weekly Meal Plan Card
+**Trigger:** "Generate the weekly meal plan" / "Sunday menu"
+
+A warm card telling the household what the week's food looks like, tagged 🍳 home / 🥡 delivery / 🍽️ out, with reservations pulled from the calendar. Claude drafts it as an email; you send it. Format and voice rules: `templates/household-weekly-meal-plan.md`.
+
+### Grocery Receipt Processing
+**Trigger:** "Here's my grocery receipt" (screenshot, PDF, or pasted text)
+
+Parse items → categorize → show a summary to confirm → add to inventory with estimated expiration dates → flag soon-to-expire items for meal planning. Default locations: refrigerated → main fridge, frozen → main freezer, everything else → pantry (override with "the milk is going downstairs").
+
+| Category | Estimate from purchase |
+|----------|------------------------|
+| Milk, cream | 7–10 days |
+| Yogurt, soft cheese | 2–3 weeks |
+| Hard cheese | 4–6 weeks |
+| Leafy produce | 5–7 days |
+| Sturdy produce | 1–2 weeks |
+| Long-lasting produce (onions, squash) | 2–4 weeks |
+| Berries | 3–5 days |
+| Fresh meat | 3–5 days |
+| Fresh seafood | 1–2 days |
+| Bread | 5–7 days |
+| Eggs | 3–4 weeks |
+| Tofu | 1–2 weeks |
+| Pantry and condiments | No expiration |
+
+### Leftovers
+**Trigger:** "I have leftovers from [meal], what can I do with them?"
+
+1. Sort what's left by freezability: **freezes well** (cooked grains, beans, roasted vegetables, proteins, dairy-free sauces), **freeze with caution** (dairy sauces, fresh herbs), **don't freeze** (fresh garnishes, crispy toppings, raw vegetables for crunch)
+2. Suggest transformations: stir-fry → fried rice or lettuce wraps; roasted vegetables → soup, frittata, or grain bowl; Mexican bowls → freezer burritos; soup → portioned lunches
+3. Schedule leftover meals in open `meal-plan.md` slots (🔄) and log anything frozen, with the date, in freezer inventory
+
+The MCP server's `suggest_leftover_uses` does steps 1–2, including a freezer-burrito assembly guide.
+
 ### Inventory Management
 **Update Commands:**
 - "Update my [location] inventory with current items"
@@ -396,25 +475,15 @@ Workflow to minimize food waste before trips by triaging perishables into: use n
 - Use up perishables before non-perishables
 - Consider prep time for busy vs. relaxed days
 
-### High Altitude Cooking Adjustments
-**If you live at high altitude** (typically above 3,000 feet / 914 meters):
+## Wrapping Up a Session
 
-**Common adjustments needed:**
-- **Baking**: Increase oven temperature by 15-25°F, reduce leavening, add extra liquid
-- **Boiling**: Water boils at lower temperature, requires longer cooking times
-- **Pasta & grains**: Add 2-5 minutes to cooking time
-- **Braising**: May need extra liquid and longer cooking time
-- **Bread rising**: Faster rise times, may need less yeast or shorter proofing
+**When the cook asks "okay to close?" (or similar), treat it as a request to open a pull request to `main`.** Work left sitting on a feature branch turns into orphaned branches.
 
-**When to proactively suggest:**
-- User mentions baking issues (flat cakes, dense bread)
-- Recipes consistently need more cooking time
-- User is new to high altitude location
+1. Commit and push anything outstanding
+2. Open the PR with a summary of what changed and why
+3. Say it's open; merging is the cook's call
 
-**How to help:**
-- Offer to add altitude adjustments to recipe notes
-- Suggest testing small batches first
-- Track successful adaptations in recipe database
+If the work shouldn't merge yet (half-finished, an experiment), say so and ask. But the default is to open the PR.
 
 ## GitHub Integration (Optional)
 

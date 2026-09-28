@@ -50,6 +50,35 @@ Easy weeknight vegan meal with crispy tofu and roasted vegetables.
 - **Medium**: 1 Tbsp gochujang (as written)
 - **Spicy**: 2+ Tbsp gochujang
 
+## Variations
+
+**Flavor:**
+- **Korean-style**: Add kimchi to the sheet pan in the last 10 minutes
+- **Thai-style**: Replace miso with 2 Tbsp peanut butter, add 1 tsp curry powder
+- **Mediterranean**: Use tahini instead of miso, add olives and cherry tomatoes
+
+**Protein swaps:**
+- **Tempeh**: Cut into strips, marinate the same way
+- **Cauliflower**: Cut into florets, increase cook time to 35 minutes
+- **Chicken thighs**: Boneless thighs work great with this marinade
+
+**Vegetable swaps:**
+- **Broccoli and bell peppers**: Cut to similar sizes
+- **Brussels sprouts and carrots**: Halve sprouts, slice carrots on the diagonal
+- **Zucchini and cherry tomatoes**: Add tomatoes in the last 15 minutes
+
+## Tasting Notes
+
+**What worked in testing:**
+- Miso and gochujang balanced well; green beans and onions roasted nicely alongside
+- Finishing with fresh lime, a splash of soy sauce, cilantro, and garlic chili sauce lifted the whole dish
+
+**For crispier tofu next time:**
+- Cut into uniform 1-inch cubes rather than crumbling — irregular pieces don't crisp evenly
+- Press longer (45+ minutes)
+- Dust with cornstarch before marinating
+- Try 425°F, or broil the last 2-3 minutes
+
 ## Serving Suggestions
 
 - Over steamed rice or quinoa

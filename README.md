@@ -2,7 +2,7 @@
 
 A template for managing recipes, meal planning, and cooking projects with Claude Code. Start simple with recipes, or go deep with inventory tracking and automated shopping lists.
 
-> **Real recipes inside!** This isn't empty scaffolding. Browse 40+ tested recipes across 9 categories, a complete Thanksgiving meal plan, meal planning workflows, and templates I actually use. Fork it and make it yours.
+> **Real recipes inside!** This isn't empty scaffolding. Browse 75 recipes across 9 categories plus technique guides, a complete Thanksgiving meal plan, meal planning workflows, and templates I actually use. Fork it and make it yours.
 
 📝 **[Read the blog post: "Cooking With Claude - Learning to Practice Life in Small, Delicious Pieces"](https://ellemorrill.substack.com/p/cooking-with-claude)** | [Markdown version](2025-12-04-introducing-cooking-with-claude.md)
 
@@ -10,9 +10,11 @@ A template for managing recipes, meal planning, and cooking projects with Claude
 
 | Folder | What You'll Find |
 |--------|------------------|
-| [**recipes/**](recipes/) | 40+ tested recipes organized by category (mains, soups, breads, breakfast, desserts, etc.) with meal planning tools |
+| [**recipes/**](recipes/) | 75 recipes organized by category (mains, soups, breads, breakfast, desserts, etc.) with meal planning tools |
 | [**examples/thanksgiving-2025/**](examples/thanksgiving-2025/) | Complete holiday meal plan: 7 dishes, 4-day prep schedule, hour-by-hour cooking timeline |
-| [**templates/**](templates/) | Workflows for collaborative cooking, meal planning, food rescue, restaurant reviews, and shopping lists |
+| [**templates/**](templates/) | Workflows for collaborative cooking, meal planning, big-event prep packets, recipe development, a weekly household meal-plan card, food rescue, restaurant reviews, and shopping lists |
+| [**templates/nutritional-philosophy-template.md**](templates/nutritional-philosophy-template.md) | Write down *why* you eat the way you do, so Claude plans from your goals |
+| [**meal-plan.md**](meal-plan.md) | This week's lunches and dinners; the MCP server can read and edit it |
 | [**pantry-staples-checklist.md**](pantry-staples-checklist.md) | Essential ingredients to keep stocked, organized by category |
 | [**meal-planning-preferences.md**](meal-planning-preferences.md) | Track dietary goals, ingredient priorities, and preferences |
 | [**inventory/**](inventory/) | Track what's in your kitchen (optional - enables "what can I make?" suggestions) |
@@ -107,6 +109,7 @@ cooking-with-claude/
 │   ├── desserts/               # Desserts and baking
 │   ├── breakfast/              # Breakfast recipes
 │   ├── cocktails/              # Drinks
+│   ├── techniques/             # Technique guides (e.g. beans at altitude)
 │   ├── meal-matcher.md         # AI-powered meal suggestions
 │   └── meal-planning-helper.md # Weekly planning workflows
 ├── examples/
@@ -116,7 +119,12 @@ cooking-with-claude/
 │   ├── prep-and-assemble-workflow.md  # Collaborative cooking
 │   ├── weekly-meal-plan-template.md   # Weekly meal planning
 │   ├── going-out-of-town.md          # Food rescue before trips
+│   ├── event-prep-packet.md          # Big meals: countdown, cook-day timeline, check vs. buy
+│   ├── recipe-iteration-log.md       # Developing a recipe over several attempts
+│   ├── household-weekly-meal-plan.md # Sunday card: the week's food for the household
+│   ├── nutritional-philosophy-template.md # The why behind your food choices
 │   └── restaurant-review-template.md  # Restaurant review drafting
+├── meal-plan.md                # This week's meals (read/edited by the MCP server)
 ├── inventory/                  # Optional: track what's in your kitchen
 │   ├── master-inventory.md
 │   └── [location folders]/     # Customize to your home layout
@@ -200,6 +208,9 @@ See `templates/prep-and-assemble-workflow.md` for full workflow details.
 
 This template is designed to be customized to your home:
 
+- **Set your altitude**: Put your elevation in the "Your Altitude" section of `CLAUDE.md` and Claude adjusts every boil, bake, and pressure-cook time for it. Delete the section if you're near sea level
+- **Write your nutritional philosophy**: Copy `templates/nutritional-philosophy-template.md` to `nutritional-philosophy.md` and fill it in. Claude reads it before planning meals
+
 - **Rename inventory folders**: Change `upstairs/downstairs` to match your layout
 - **Add/remove storage locations**: Not everyone has a basement or chest freezer
 - **Adjust recipe categories**: Organize by cuisine, dietary restrictions, or whatever works for you
@@ -214,6 +225,8 @@ If you use Claude Desktop, you can enable the included MCP server for direct acc
 - Get meal suggestions based on what you have
 - Update inventory directly from Claude Desktop
 - Find items expiring soon
+- Read and edit this week's meal plan ("put tacos on Wednesday")
+- Get ideas for leftovers, sorted by what freezes well
 
 ### MCP Setup
 

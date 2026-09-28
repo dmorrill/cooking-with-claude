@@ -64,6 +64,46 @@ These templates represent workflows I've developed and refined through real cook
 
 ---
 
+### [event-prep-packet.md](event-prep-packet.md)
+
+**The Problem:** A menu for a big meal is a list of dishes. It doesn't tell you to soak the beans the night before, which appliance should do what, or that the grocery order has to go in while you're still traveling.
+
+**The Solution:** Turn the menu into a packet: the point of the night, an equipment plan, a countdown from days out, a minute-by-minute cook day with the unattended blocks marked, and an ingredients check-vs-buy list. Each countdown step goes on the calendar so the packet comes to you.
+
+**Ask Claude:** *"Turn this game-night menu into a prep packet for Saturday"*
+
+---
+
+### [recipe-iteration-log.md](recipe-iteration-log.md)
+
+**The Problem:** Recreating a recipe from someone's memory, or dialing in bread at altitude, takes several attempts. Between attempts you forget what changed, what the taster said, and which problems were the recipe versus the day.
+
+**The Solution:** A target written in the taster's words, an attempt log table, findings after each attempt (worked / didn't / process problems), a short list of changes for next time, and a "keep the test honest" note so each attempt changes only what you meant to change.
+
+**Ask Claude:** *"Log how attempt #1 went and plan attempt #2"*
+
+---
+
+### [household-weekly-meal-plan.md](household-weekly-meal-plan.md)
+
+**The Problem:** The meal plan lives in a file only one person reads. Everyone else finds out what's for dinner at dinner.
+
+**The Solution:** A warm Sunday-night card with the week's meals, each tagged 🍳 home / 🥡 delivery / 🍽️ out, with reservations pulled from the calendar and honest one-liners for nights someone's away. Claude drafts the email; you send it.
+
+**Ask Claude:** *"Generate this week's household meal plan"*
+
+---
+
+### [nutritional-philosophy-template.md](nutritional-philosophy-template.md)
+
+**The Problem:** Claude can suggest what sounds good, or what uses up the spinach. Without knowing *why* you eat the way you do, it can't suggest what fits your goals.
+
+**The Solution:** A one-page fill-in: your core belief, your framework (with sources), what you're working on now, the per-meal screen you judge meals by, and the trade-offs you're making. Copy it to `nutritional-philosophy.md`; Claude reads it before every meal plan.
+
+**Ask Claude:** *"Interview me to fill in my nutritional philosophy"*
+
+---
+
 ## Creating Your Own Templates
 
 These templates evolved from my specific needs. Yours might be different! Some ideas:
